@@ -17,9 +17,6 @@ import javax.annotation.PostConstruct;
 import static java.lang.Integer.parseInt;
 import static java.lang.System.getProperty;
 
-/**
- * Created by Manish Kumar on 2/20/17.
- */
 @SpringBootApplication
 @Import(VertxBeans.class)
 public class AppStarter extends NubesServer {
@@ -38,7 +35,7 @@ public class AppStarter extends NubesServer {
         JsonObject config = new JsonObject()
                 .put("host", "localhost")
                 .put("port", parseInt(getProperty("server.port", "8080")))
-                .put("src-package", "com.http.load.tool");
+                .put("src-package", "vertx.nubes.example");
         VertxNubes vertxNubes = new VertxNubes((io.vertx.core.Vertx) vertx.getDelegate(), config);
         vertxNubes.bootstrap(res -> {
             if (res.succeeded()) {
