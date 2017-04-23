@@ -9,7 +9,6 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
 @Controller("/json/")
-@ContentType("application/json")
 public class RestController {
 
     @Service("vertx")
